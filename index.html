@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="lib/chosen/chosen.jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	
+	<link rel="stylesheet" href="lib/chosen/chosen.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<title>Chosen App</title>
+</head>
+<body>
+	<div class="container" ng-controller="RecipientsController">
+		<h1>Chosen</h1>
+
+		<p>A simple list chooser that allows you to remove items. Uses Angular.js</p>
+		<select data-placeholder="Choose a Recipient" multiple class="span4 chzn-select" chosen ng-model="recipients" ng-options="recipient.name for recipient in recipientsList">
+		</select>
+		<p ng-repeat="recipient in recipients"><strong>{{recipient.name}}</strong></p>
+	</div>
+</body>
+</html>
